@@ -18,12 +18,9 @@ export class DatabaseController {
     });
 
     router.get("/planrepas/:id?", (req: Request, res: Response, _: NextFunction) => {
-      // console.log('yo');
-      res.send('foo bar');
-
-      // this.databaseService.getAllPlanRepas();
-      // if (req.params.id) this.databaseService.getPlanRepas(Number(req.params.id)).then((result: pg.QueryResult) => res.json(result));
-      // else this.databaseService.getAllPlanRepas().then((result: pg.QueryResult) => res.json(result));
+      console.log('yo');
+      if (req.params.id) this.databaseService.getPlanRepas(Number(req.params.id)).then((result: pg.QueryResult) => res.json(result));
+      else this.databaseService.getAllPlanRepas().then((result: pg.QueryResult) => res.json(result));
     });
 
     return router;
